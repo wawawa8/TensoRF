@@ -1,0 +1,11 @@
+*.pth
+out/*
+data/tets/*
+tensorf/mesh/*
+mesh/*
+*.pyc
+error_maps/*
+data/nerf_synthetic/*
+data/realdata/*
+data/nerd/*
+log/*
