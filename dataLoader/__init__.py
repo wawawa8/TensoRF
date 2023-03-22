@@ -3,7 +3,7 @@ from .blender import BlenderDataset
 from .nsvf import NSVF
 from .tankstemple import TanksTempleDataset
 from .your_own_data import YourOwnDataset
-from realdata import RealdataDataset
+from .realdata import RealdataDataset
 
 
 dataset_dict = {'blender': BlenderDataset,
