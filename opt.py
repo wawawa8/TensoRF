@@ -16,8 +16,8 @@ def config_parser(cmd=None):
                         help='how many iterations to show psnrs or iters')
 
     parser.add_argument('--with_depth', action='store_true')
-    parser.add_argument('--downsample_train', type=float, default=1.0)
-    parser.add_argument('--downsample_test', type=float, default=1.0)
+    parser.add_argument('--downsample_train', type=float, default=None)
+    parser.add_argument('--downsample_test', type=float, default=None)
 
     parser.add_argument('--model_name', type=str, default='TensorVMSplit',
                         choices=['TensorVMSplit', 'TensorCP'])
@@ -33,7 +33,7 @@ def config_parser(cmd=None):
     # training options
     # learning rate
     parser.add_argument("--lr_init", type=float, default=0.02,
-                        help='learning rate')    
+                        help='learning rate')
     parser.add_argument("--lr_basis", type=float, default=1e-3,
                         help='learning rate')
     parser.add_argument("--lr_decay_iters", type=int, default=-1,
@@ -54,7 +54,7 @@ def config_parser(cmd=None):
                         help='loss weight')
     parser.add_argument("--TV_weight_app", type=float, default=0.0,
                         help='loss weight')
-    
+
     # model
     # volume options
     parser.add_argument("--n_lamb_sigma", type=int, action="append")
@@ -69,7 +69,7 @@ def config_parser(cmd=None):
                         help='scaling sampling distance for computation')
     parser.add_argument("--density_shift", type=float, default=-10,
                         help='shift density in softplus; making density = 0  when feature == 0')
-                        
+
     # network decoder
     parser.add_argument("--shadingMode", type=str, default="MLP_PE",
                         help='which shading mode to use')
@@ -81,7 +81,7 @@ def config_parser(cmd=None):
                         help='number of pe for features')
     parser.add_argument("--featureC", type=int, default=128,
                         help='hidden feature channel in MLP')
-    
+
 
 
     parser.add_argument("--ckpt", type=str, default=None,
